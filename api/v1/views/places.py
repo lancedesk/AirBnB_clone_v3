@@ -14,9 +14,7 @@ from flasgger.utils import swag_from
 from flask import jsonify, abort, request, make_response
 
 
-@app_views.route('/cities/<string:city_id>/places',
-                 methods=['GET'], strict_slashes=False)
-@swag_from('documentation/places/get.yml', methods=['GET'])
+@app_views.route("/cities/<city_id>/places")
 def get_places(city_id):
     """
     Retrieve all places in a specific city.
@@ -30,9 +28,7 @@ def get_places(city_id):
     return jsonify(places)
 
 
-@app_views.route('/places/<string:place_id>', methods=['GET'],
-                 strict_slashes=False)
-@swag_from('documentation/places/get_id.yml', methods=['GET'])
+@app_views.route("/places/<place_id>")
 def get_place(place_id):
     """
     Retrieve a specific place by ID.
@@ -44,9 +40,7 @@ def get_place(place_id):
     return jsonify(place.to_dict())
 
 
-@app_views.route('/places/<string:place_id>', methods=['DELETE'],
-                 strict_slashes=False)
-@swag_from('documentation/places/delete.yml', methods=['DELETE'])
+@app_views.route("/places/<place_id>", methods=["DELETE"])
 def delete_place(place_id):
     """
     Delete a place by ID.
@@ -59,9 +53,7 @@ def delete_place(place_id):
     return jsonify({})
 
 
-@app_views.route('/cities/<string:city_id>/places', methods=['POST'],
-                 strict_slashes=False)
-@swag_from('documentation/places/post.yml', methods=['POST'])
+@app_views.route("/cities/<city_id>/places", methods=["POST"])
 def create_place(city_id):
     """
     Create a new place in a specific city.
@@ -85,9 +77,7 @@ def create_place(city_id):
     return (jsonify(obj.to_dict()), 201)
 
 
-@app_views.route('/places/<string:place_id>', methods=['PUT'],
-                 strict_slashes=False)
-@swag_from('documentation/places/put.yml', methods=['PUT'])
+@app_views.route("/places/<place_id>", methods=["PUT"])
 def update_place(place_id):
     """
     Update a place by ID.
@@ -104,9 +94,7 @@ def update_place(place_id):
     return jsonify(obj.to_dict())
 
 
-@app_views.route('/places_search', methods=['POST'],
-                 strict_slashes=False)
-@swag_from('documentation/places/search.yml', methods=['POST'])
+@app_views.route("/places_search", methods=["POST"])
 def search_places():
     """
     Search for places based on specified criteria.
