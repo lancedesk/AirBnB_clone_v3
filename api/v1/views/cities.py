@@ -13,6 +13,7 @@ from flask import abort, jsonify, make_response, request
 
 @app_views.route("/states/<state_id>/cities", methods=["GET"])
 def get_cities_by_state(state_id):
+
     """
     Retrieves all cities associated with a given state.
     """

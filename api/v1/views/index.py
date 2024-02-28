@@ -15,6 +15,7 @@ from models.review import Review
 
 @app_views.route("/status")
 def api_status():
+
     """
     Retrieve the status of the API.
     Returns:

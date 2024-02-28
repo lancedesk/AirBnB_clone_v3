@@ -14,6 +14,7 @@ from flask import abort, jsonify, make_response, request
 
 @app_views.route("/places/<place_id>/amenities")
 def get_place_amenities(place_id):
+
     """
     Retrieve all amenities associated with a specific place.
     """

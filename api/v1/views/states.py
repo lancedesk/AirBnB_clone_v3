@@ -12,6 +12,7 @@ from flask import abort, jsonify, make_response, request
 
 @app_views.route("/states", methods=["GET"])
 def get_states():
+
     """
     Retrieve all states.
     """
@@ -26,6 +27,7 @@ def get_states():
 
 @app_views.route("/states/<string:state_id>", methods=["GET"])
 def get_state(state_id):
+
     """
     Retrieve a specific state by ID.
     """

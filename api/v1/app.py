@@ -17,6 +17,7 @@ app.register_blueprint(app_views, url_prefix="/api/v1")
 
 @app.teardown_appcontext
 def close_database_connection(exception):
+
     """
     Close the database connection at the end of the request.
     """

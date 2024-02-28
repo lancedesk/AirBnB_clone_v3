@@ -16,6 +16,7 @@ from flask import jsonify, abort, request, make_response
 
 @app_views.route("/cities/<city_id>/places")
 def get_places(city_id):
+
     """
     Retrieve all places in a specific city.
     """

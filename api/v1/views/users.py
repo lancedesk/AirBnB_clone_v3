@@ -10,6 +10,7 @@ from flask import abort, jsonify, make_response, request
 
 @app_views.route("/users", methods=["GET"])
 def get_users():
+
     """
     Retrieve all users.
     """

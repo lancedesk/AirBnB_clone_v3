@@ -12,6 +12,7 @@ from flask import abort, jsonify, make_response, request
 
 @app_views.route("/amenities", methods=["GET"])
 def get_amenities():
+
     """
     Retrieves all amenities.
     """
